@@ -1,0 +1,23 @@
+.Navbar {
+  padding: 10px 80px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-family: "Benne", serif;
+  font-size: 26px;
+}
+.navItems {
+  li {
+    list-style-type: none;
+    display: inline;
+    margin-right: 50px;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
