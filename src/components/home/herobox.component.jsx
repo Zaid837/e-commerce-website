@@ -7,11 +7,11 @@ function HeroBox() {
         <div className="heroBox">
             <div>
                 <h1 className="heading">Welcome to <br/><span>RADSTYLES CLUB</span></h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                <p className="subtext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
                     Cum ducimus cupiditate odit architecto laudantium exercitationem
                     necessitatibus veritatis, aut fuga saepe!
                 </p>
-                <button>Shop Here</button>
+                <button className="shop">Shop Here</button>
             </div>
             <img src={model} alt="" className="model"/>
         </div>

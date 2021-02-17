@@ -4,15 +4,24 @@ import './App.css';
 import MainLayout from './layout/MainLayout'
 import HomePage from './pages/Home';
 
+const HatsPage = () => (
+  <div>
+    <h1>HATS PAGE</h1>
+  </div>
+)
+
 class App extends React.Component {
   render(){
     return (
       <div>
+        <MainLayout>
           <Router>
             <Switch>
-              <Route path="/" exact><MainLayout><HomePage/></MainLayout></Route>
+              <Route path="/" exact component={HomePage}/>
+              <Route path="/hats" exact component={HatsPage}/>
             </Switch>
           </Router>
+          </MainLayout>
       </div>
     );
   }
