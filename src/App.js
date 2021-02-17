@@ -3,25 +3,22 @@ import {BrowserRouter as Router, Switch, Route} from'react-router-dom';
 import './App.css';
 import MainLayout from './layout/MainLayout'
 import HomePage from './pages/Home';
+import Shop from './pages/shop/Shop';
+ 
 
-const HatsPage = () => (
-  <div>
-    <h1>HATS PAGE</h1>
-  </div>
-)
-
-class App extends React.Component {
+class App extends React.Component { 
   render(){
     return (
       <div>
-        <MainLayout>
           <Router>
-            <Switch>
-              <Route path="/" exact component={HomePage}/>
-              <Route path="/hats" exact component={HatsPage}/>
-            </Switch>
+            <MainLayout>
+              <Switch>
+                <Route path="/" exact component={HomePage}/>
+                <Route path="/shop" exact component={Shop}/>
+              </Switch>
+            </MainLayout>
           </Router>
-          </MainLayout>
+         
       </div>
     );
   }
