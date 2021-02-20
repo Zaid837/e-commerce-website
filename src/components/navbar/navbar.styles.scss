@@ -15,14 +15,11 @@
   }
 }
 .navItems {
-  li {
+  a {
     list-style-type: none;
     display: inline;
     margin-right: 50px;
-
-    a {
-      text-decoration: none;
-      color: black;
-    }
+    text-decoration: none;
+    color: black;
   }
 }
