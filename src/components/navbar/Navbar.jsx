@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase/firebase.utils";
+import { connect } from "react-redux";
 import "./navbar.styles.scss";
-const Navbar = ({ user }) => {
+const Navbar = ({ currentUser }) => {
   return (
     <div className="Navbar">
       <div className="logo">
@@ -15,14 +16,14 @@ const Navbar = ({ user }) => {
         <Link className="options" to="/shop">
           Shop
         </Link>
-        <Link className="options" href="#">
+        <Link className="options" to="/">
           Contact
         </Link>
         {/* <Link className="options" to="/signIn">
           Sign In
         </Link> */}
-        {user ? (
-          <Link className="options" onClick={() => auth.signOut()}>
+        {currentUser ? (
+          <Link to="/" className="options" onClick={() => auth.signOut()}>
             Sign Out
           </Link>
         ) : (
@@ -30,12 +31,14 @@ const Navbar = ({ user }) => {
             Sign In
           </Link>
         )}
-        <Link className="options" href="#">
+        <Link className="options" to="/">
           Cart
         </Link>
       </div>
     </div>
   );
 };
-
-export default Navbar;
+const mapStateToProps = (state) => ({
+  currentUser: state.user.currentUser,
+});
+export default connect(mapStateToProps)(Navbar);
