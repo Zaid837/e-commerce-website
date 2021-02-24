@@ -2,8 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
+import Cart from "../cart-dropdown/dropdown.component";
 import "./navbar.styles.scss";
-const Navbar = ({ currentUser }) => {
+import CartIcon from "../cart-icon/cartIcon.component";
+const Navbar = ({ currentUser, hidden }) => {
   return (
     <div className="Navbar">
       <div className="logo">
@@ -31,14 +33,14 @@ const Navbar = ({ currentUser }) => {
             Sign In
           </Link>
         )}
-        <Link className="options" to="/">
-          Cart
-        </Link>
+        <CartIcon />
       </div>
+      {hidden ? null : <Cart />}
     </div>
   );
 };
-const mapStateToProps = (state) => ({
-  currentUser: state.user.currentUser,
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+  currentUser,
+  hidden,
 });
 export default connect(mapStateToProps)(Navbar);
