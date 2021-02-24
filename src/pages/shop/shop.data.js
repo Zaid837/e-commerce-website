@@ -236,7 +236,7 @@ const SHOP_DATA = [
             imageUrl: 'https://i.ibb.co/VpW4x5t/roll-up-jean-shirt.png',
             price: 40
           },
-          {
+          { 
             id: 35,
             name: 'Burgundy T-shirt',
             imageUrl: 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
