@@ -6,6 +6,7 @@ import {connect } from "react-redux";
 import {createStructuredSelector} from "reselect"
 import HomePage from './pages/Home';
 import Shop from './pages/shop/Shop';
+import CheckoutPage from './pages/checkout/checkout'
 import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-up';
 import { auth, addUserData } from './firebase/firebase.utils'
 import { setCurrentUser } from "./redux/user/user-actions";
@@ -45,8 +46,9 @@ class App extends React.Component {
             <MainLayout >
               <Switch>
                 <Route path="/" exact component={HomePage}/>
-                <Route path="/shop" exact component={Shop}/>
+                <Route path="/shop"  component={Shop}/>
                 <Route path="/signIn" exact render={() => this.props.currentUser ? (<Redirect to="/"/>) : (<SignInAndSignUp/>)}/>
+                <Route path="/checkout" exact component={CheckoutPage}/>
               </Switch>
             </MainLayout>
           </Router>
