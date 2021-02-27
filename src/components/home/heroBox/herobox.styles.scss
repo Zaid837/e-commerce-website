@@ -17,10 +17,17 @@
     width: 450px;
     margin-bottom: 10px;
   }
-  .shop {
-    padding: 15px 25px;
+  .shop-button {
+    width: 150px;
+    padding: 10px 20px;
     cursor: pointer;
+
+    .shop {
+      color: black;
+      text-decoration: none;
+    }
   }
+
   .model {
     width: 330px;
     filter: grayscale(30%);
